@@ -31,8 +31,7 @@ inputElement.addEventListener(
     if (response.length <= 10 && response.length >= 2) {
       response.forEach(item => {
         const el = document.createElement('li');
-        console.log(item); // w konsoli przeglądarki pokażą ci się pola tego obiektu
-        // tu prosze przerobić to tak jak jest w poleceniu
+        console.log(item);
         el.innerHTML = `${item.name.common}`;
         listElement.appendChild(el);
       });
@@ -40,11 +39,15 @@ inputElement.addEventListener(
     }
 
     if (response.length === 1) {
-      console.log(response[0]); // w konsoli przeglądarki pokażą ci się pola tego obiektu
-      // tu prosze przerobić to tak jak jest w poleceniu
+      console.log(response[0]);
       infoElement.innerHTML = `
         <div>
          name: ${response[0].name.common}
+         capital: ${response[0].capital.common}
+         population: ${response[0].population.common}
+         flags: ${response[0].flags.common}
+         languages: ${response[0].languages.common}
+
         <div>
       `;
       return;
