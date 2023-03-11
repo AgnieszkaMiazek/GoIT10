@@ -39,15 +39,18 @@ inputElement.addEventListener(
     }
 
     if (response.length === 1) {
-      console.log(response[0]);
+      const country = response[0];
+      console.log(country);
       infoElement.innerHTML = `
         <div>
-         name: ${response[0].name.common}
-         capital: ${response[0].capital.common}
-         population: ${response[0].population.common}
-         flags: ${response[0].flags.common}
-         languages: ${response[0].languages.common}
-
+          name: ${country.name.official}
+          capital: ${country.capital}
+          population: ${country.population}
+          flags: ${country.flags.svg}
+          languages: ${Object.values(country.languages).join(", ")}
+        </div>
+      `;
+    }
         <div>
       `;
       return;
